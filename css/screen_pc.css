@@ -1,0 +1,430 @@
+@charset "UTF-8";
+
+/* INTERFACE */
+
+body>header{
+	max-width:1500px;
+	height:100px;
+	margin:0 auto;
+	position:relative;
+}
+
+body>header h1,
+body>header>a{
+	margin:0;
+	position:absolute;
+	top:25px;
+	left:60px;
+}
+
+body>header h1 a img,
+body>header>a img{
+	width:175px;
+	height:46px;
+	font-size:15px;
+	vertical-align:bottom;
+}
+
+body>header nav ul{
+	margin:0;
+	padding:0;
+	list-style-type:none;
+	position:absolute;
+	top:35px;
+	right:60px;
+}
+
+body>header nav ul li{
+	float:left;
+	padding:0 0 0 60px;
+}
+
+body>header nav ul li a{
+	font-size:14px;
+	font-weight:300;
+}
+
+body>header nav ul li a:link,
+body>header nav ul li a:visited{
+	color:#000;
+}
+
+body>header nav ul li a:hover,
+body>header nav ul li a:active{
+	color:#0ca7b9;
+}
+
+body>header nav ul li span{
+	font-size:14px;
+	font-weight:300;
+	color:#0ca7b9;
+}
+
+body>footer{
+	padding:60px 40px 100px;
+	background-color:#555;
+	border-top:10px solid #0ca7b9;
+	text-align:center;
+}
+
+body>footer>img{
+	width:100px;
+}
+
+body>footer small{
+	display:block;
+	margin:50px 0 0;
+	font-family:Verdana,sans-serif;
+	font-size:9px;
+	color:#fff;
+}
+
+#all_contents{
+	background: linear-gradient(90deg, #eee 30%, #e6e6e4 0, #e6e6e4 70%, #e6e6e4 0);
+	min-height:500px;
+}
+
+#key_area{
+	max-width:1500px;
+	margin:0 auto;
+	padding:50px 50px 0;
+}
+
+#key_area img{
+	width:100%;
+}
+
+#key_copy{
+	max-width:900px;
+	width:60%;
+	height:190px;
+	margin:0 auto;
+	padding:50px;
+	background-color:#fff;
+	text-align:center;
+	transform:translateY(-50%);
+}
+
+#key_copy::after{
+	display:block;
+	content:'';
+	width:1px;
+	height:150px;
+	margin:0 auto;
+	background-color:#000;
+}
+
+#key_copy h2{
+	margin:0;
+	font-family:'Roboto', sans-serif;
+	font-size:50px;
+	font-weight:300;
+	color:#084193;
+}
+
+#key_copy p{
+	margin:20px 0 30px;
+	font-size:15px;
+	font-weight:300;
+	line-height:1.5em;
+}
+
+#key_copy ul{
+	display:flex;
+	flex-wrap:wrap;
+	margin:0 0 15px;
+	padding:0;
+	list-style-type:none;
+	text-align:center;
+	font-size:15px;
+	font-weight:300;
+}
+
+#key_copy ul li{
+	width:33.33333%;
+	margin:0 0 10px;
+}
+
+#message_area{
+	max-width:1500px;
+	margin:-60px auto 120px;
+	padding:0 50px;
+}
+
+#message_area>div{
+	background-color:#fff;
+	padding:50px 80px;
+}
+
+#message_area p{
+	text-align:justify;
+	font-size:15px;
+	font-weight:300;
+	line-height:1.8em;
+}
+
+#message_area p.catchcopy{
+	text-align:center;
+	font-size:38px;
+	font-weight:100;
+	line-height:1.4em;
+}
+
+#service_area{
+	max-width:1500px;
+	margin:0 auto 80px;
+	padding:0 50px;
+}
+
+#service_area img:first-of-type{
+	display:block;
+	width:60%;
+	margin:0 0 0 auto;
+}
+
+#service_area img:last-of-type{
+	display:block;
+	width:70%;
+	margin:-80px 0 0;
+}
+
+#service_area>div{
+	width:75%;
+	margin:0 0 0 auto;
+	padding:40px;
+	background-color:#fff;
+	transform:translateY(-50px);
+	min-width: 1070px;
+}
+
+#service_contents{
+	width:100%;
+	margin:30px 0 0;
+}
+
+#service_contents th{
+	text-align:left;
+	font-size:15px;
+	font-weight:400;
+	color:#084193;
+	border-bottom:1px solid #ddd;
+	padding: 0 10px 10px;
+	vertical-align: bottom;
+	line-height: 2;
+}
+
+#service_contents th>span{
+	font-size: 18px;
+}
+
+#service_contents td{
+	margin:0 0 10px;
+	padding:5px 10px 15px;
+	text-align:left;
+	vertical-align: top;
+	font-size:14px;
+	font-weight:300;
+}
+
+@media screen and (max-width:1250px) {
+	#service_area>div{
+		width: auto;
+		min-width: unset;
+		padding: 40px 30px;
+	}
+	#service_contents th{
+		font-size: 13px;
+		padding: 0 5px 10px;
+	}
+	#service_contents th>span{
+		font-size: 15px;
+	}
+	#service_contents td{
+		font-size: 12px;
+		padding: 5px 5px 15px;
+	}
+}
+
+#company_area{
+	max-width:1500px;
+	margin:0 auto;
+	padding:0 50px 350px;
+}
+
+#company_area h2{
+	margin:0 0 40px;
+}
+
+#company_area>div{
+	background-color:#fff;
+	padding:50px 30px;
+	overflow:hidden;
+}
+
+#company_area>div>section{
+	width:50%;
+	box-sizing:border-box;
+	margin:0 0 30px;
+	padding:0 50px;
+	float:left;
+}
+
+#company_area>div>section h3{
+	margin:0 0 30px;
+	text-align:center;
+	font-size:16px;
+}
+
+#company_area>div>section:last-of-type{
+	border-left:1px solid #ddd;
+}
+
+#company_area figure{
+	margin:0 auto;
+	text-align:center;
+}
+
+#company_area figure img{
+	width:300px;
+}
+
+#company_area figure figcaption{
+	font-size:14px;
+	color:#555;
+}
+
+#map_area{
+	max-width:1000px;
+	margin:0 auto;
+	transform:translateY(-50%);
+	text-align:center;
+}
+
+#map_area>div{
+	width:100%;
+	height:0;
+	margin:0 0 5px;
+	padding:50% 0 0;
+	position:relative;
+}
+
+#map_area>div iframe{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+}
+
+
+#form_area{
+	max-width:1000px;
+	margin:0 auto;
+	padding:50px 50px 100px;
+}
+
+#form_area>div{
+	background-color:#fff;
+	padding:50px 80px 80px;
+}
+
+#form_area>div>p{
+	margin:25px 0;
+	text-align:center;
+	font-size:14px;
+	font-weight:300;
+}
+
+#form_table{
+	width:100%;
+	margin:0 0 50px;
+}
+
+#form_table th{
+	padding:15px;
+	text-align:left;
+	font-size:15px;
+	font-weight:300;
+	overflow:hidden;
+	border-bottom:1px dotted #ddd;
+}
+
+#form_table th span{
+	display:inline-block;
+	float:right;
+	padding:4px 8px 6px;
+	font-size:12px;
+	font-weight:300;
+	line-height:1;
+	color:#fff;
+	background-color:#084193;
+}
+
+#form_table td{
+	padding:15px;
+	border-bottom:1px dotted #ddd;
+	font-size:14px;
+	font-weight:300;
+	line-height:1.5em;
+}
+
+input.small{
+	width:49%;
+}
+
+input.small:first-of-type{
+	margin:0 2% 0 0;
+}
+
+input.mini{
+	width:20%;
+}
+
+#btn_area{
+	max-width:406px;
+	margin:0 auto;
+	text-align:center;
+}
+
+#btn_area>a{
+	border-radius: 4px;
+	width: 200px;
+	display: inline-block;
+	margin:0 0 15px;
+	padding:6px 0 8px;
+	background: #0ca7b9;
+	color: #fff;
+	text-align: center;
+	font-size:14px;
+	border: 1px solid #0ca7b9;
+	cursor: pointer;
+}
+
+#btn_area>a:hover{
+	color: #0ca7b9;
+	background: #fff;
+}
+
+#privacy_area{
+	max-width:1000px;
+	margin:0 auto;
+	padding:50px 50px 100px;
+}
+
+#privacy_area>div{
+	background-color:#fff;
+	padding:50px 80px 80px;
+}
+#privacy_area p{
+	text-align: justify;
+	font-size:14px;
+	font-weight:300;
+	line-height: 1.8em;
+}
+
+.pc{
+	display: block;
+}
+.sp{
+	display: none;
+}

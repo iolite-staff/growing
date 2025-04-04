@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="グローイング総研は、お客様が直面している経営の変化（課題・問題）を調査・分析し、その改善に向けた方向性と「ソリューション（解決策）」を提供するコンサルティング会社です。">
+<meta name="keywords" content="グローイング総研,コンサルタント,コンサルティング,ISO,マネジメントシステム">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5">
+<meta name="msapplication-TileImage" content="../msapplication-TileImage.png">
+<meta name="msapplication-TileColor" content="#000">
+<title>お問い合わせ | グローイング総研</title>
+<link rel="stylesheet" type="text/css" media="screen" href="../css/screen.css">
+<link rel="stylesheet" type="text/css" media="screen and (max-width:660px)" href="../css/screen_sp.css">
+<link rel="stylesheet" type="text/css" media="screen and (min-width:661px) and (max-width:1023px)" href="../css/screen_tb.css">
+<link rel="stylesheet" type="text/css" media="screen and (min-width:1024px)" href="../css/screen_pc.css">
+<link rel="stylesheet" type="text/css" media="print" href="../css/print.css">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="icon" type="image/png" href="../favicon-.png" sizes="16x16">
+<link rel="icon" type="image/png" href="../favicon.png" sizes="32x32">
+<script type="text/javascript" src="../lib/jquery/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../lib/jquery/jquery-migrate-1.4.1.min.js"></script>
+<script type="text/javascript" src="../lib/jquery.validate.min.js"></script>
+<style>
+	label.error{
+		color:#d80000;
+		display:block;
+	}
+</style>
+<script>
+	$(document).ready(function(){
+		$("#contact_form").validate( {
+			rules: {
+				company: {
+					required: true
+				},
+				company_kana: {
+					required: true,
+					katakana: true
+				},
+				postcode: {
+					required: true,
+					postnum: true
+				},
+				pref: {
+					required: true
+				},
+				address: {
+					required: true
+				},
+				last_name: {
+					required: true
+				},
+				first_name: {
+					required: true
+				},
+				last_name_kana: {
+					required: true,
+					katakana: true
+				},
+				first_name_kana: {
+					required: true,
+					katakana: true
+				},
+				tel: {
+					required: true,
+					telnum: true
+				},
+				email: {
+					required: true,
+					mailaddress: true
+				},
+				body: {
+					required: true
+				},
+			},
+			messages: {
+				company: {
+					required: "組織名を入力してください"
+				},
+				company_kana: {
+					required: "組織名フリガナを入力してください",
+					katakana: "組織名フリガナは全角カタカナで入力してください"
+				},
+				postcode: {
+					required: "郵便番号を入力してください",
+					postnum: "郵便番号は半角で郵便番号形式で入力してください"
+				},
+				pref: {
+					required: "都道府県を選択してください"
+				},
+				address: {
+					required: "住所を入力してください"
+				},
+				last_name: {
+					required: "姓を入力してください"
+				},
+				first_name: {
+					required: "名を入力してください"
+				},
+				last_name_kana: {
+					required: "姓フリガナを入力してください",
+					katakana: "姓フリガナは全角カタカナで入力してください"
+				},
+				first_name_kana: {
+					required: "名フリガナを入力してください",
+					katakana: "名フリガナは全角カタカナで入力してください"
+				},
+				tel: {
+					required: "電話番号を入力してください",
+					telnum: "電話番号を半角数字、正しい形式で入力してください"
+				},
+				email: {
+					required: "メールアドレスを入力してください",
+					mailaddress: "メールアドレスを半角英数字、正しい形式で入力してください"
+				},
+				body: {
+					required: "お問い合わせ内容を入力してください"
+				},
+			},
+			errorPlacement: function(error, element) {
+				switch(element.attr('name')) {
+					case "pref":
+					case "address":
+						error.insertAfter("#address_area");
+						break;
+					case "last_name":
+					case "first_name":
+						error.insertAfter("#full_name");
+						break;
+					case "last_name_kana":
+					case "first_name_kana":
+						error.insertAfter("#full_name_kana");
+						break;
+					default:
+						error.insertAfter(element);
+						break;
+				}
+			}
+		} );
+	});
+</script>
+</head>
+<body>
+<header>
+	<a href="../index.html"><img src="../img/interface/logo.svg" alt="Growing Soken"></a>
+	<nav>
+		<ul>
+			<li><a href="../index.html#message_area">ご挨拶</a></li>
+			<li><a href="../index.html#business_area">業務内容</a></li>
+			<li><a href="../index.html#company_area">会社概要</a></li>
+			<li><a href="../index.html#company_area">会社沿革</a></li>
+			<li><span>お問い合わせ</span></li>
+		</ul>
+	</nav>
+	<span id="nav_btn"></span>
+</header>
+<article id="all_contents">
+	<section id="form_area">
+		<div>
+			<h2 class="title02">Contact Us<span>お問い合わせ</span></h2>
+			<p>
+				以下のフォームよりお気軽にお問い合わせください。<br>
+				本フォームから頂いた営業メールには回答致しませんのでご了承ください。<br>
+				個人情報の取り扱いについては<a href="../privacy/index.html">こちら</a>
+			</p>
+			<form action="./confirm.php" method="POST" id="contact_form" novalidete="novalidete">
+				<table id="form_table">
+					<tbody>
+						<tr>
+							<th>組織名<span>必須</span></th>
+							<td><input type="text" name="company" id="company" placeholder="" value=""></td>
+						</tr>
+						<tr>
+							<th>組織名フリガナ<span>必須</span></th>
+							<td><input type="text" name="company_kana" id="company_kana" placeholder="" value=""></td>
+						</tr>
+						<tr>
+							<th>郵便番号<span>必須</span></th>
+							<td><input class="mini" type="text" name="postcode" id="postcode" placeholder="111-1111" value=""></td>
+						</tr>
+						<tr>
+							<th>ご住所<span>必須</span></th>
+							<td>
+								<div class="form-select">
+									<select name="pref" id="pref">
+										<option value="">都道府県</option>
+										<option value="北海道">北海道</option>
+										<option value="青森県">青森県</option>
+										<option value="岩手県">岩手県</option>
+										<option value="宮城県">宮城県</option>
+										<option value="秋田県">秋田県</option>
+										<option value="山形県">山形県</option>
+										<option value="福島県">福島県</option>
+										<option value="茨城県">茨城県</option>
+										<option value="栃木県">栃木県</option>
+										<option value="群馬県">群馬県</option>
+										<option value="埼玉県">埼玉県</option>
+										<option value="千葉県">千葉県</option>
+										<option value="東京都">東京都</option>
+										<option value="神奈川県">神奈川県</option>
+										<option value="新潟県">新潟県</option>
+										<option value="富山県">富山県</option>
+										<option value="石川県">石川県</option>
+										<option value="福井県">福井県</option>
+										<option value="山梨県">山梨県</option>
+										<option value="長野県">長野県</option>
+										<option value="岐阜県">岐阜県</option>
+										<option value="静岡県">静岡県</option>
+										<option value="愛知県">愛知県</option>
+										<option value="三重県">三重県</option>
+										<option value="滋賀県">滋賀県</option>
+										<option value="京都府">京都府</option>
+										<option value="大阪府">大阪府</option>
+										<option value="兵庫県">兵庫県</option>
+										<option value="奈良県">奈良県</option>
+										<option value="和歌山県">和歌山県</option>
+										<option value="鳥取県">鳥取県</option>
+										<option value="島根県">島根県</option>
+										<option value="岡山県">岡山県</option>
+										<option value="広島県">広島県</option>
+										<option value="山口県">山口県</option>
+										<option value="徳島県">徳島県</option>
+										<option value="香川県">香川県</option>
+										<option value="愛媛県">愛媛県</option>
+										<option value="高知県">高知県</option>
+										<option value="福岡県">福岡県</option>
+										<option value="佐賀県">佐賀県</option>
+										<option value="長崎県">長崎県</option>
+										<option value="熊本県">熊本県</option>
+										<option value="大分県">大分県</option>
+										<option value="宮崎県">宮崎県</option>
+										<option value="鹿児島県">鹿児島県</option>
+										<option value="沖縄県">沖縄県</option>
+									</select>
+								</div>
+								<input type="text" name="address" id="address" placeholder="以降のご住所" value="">
+								<span id="address_area"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>お名前<span>必須</span></th>
+							<td>
+								<input class="small" type="text" name="last_name" id="last_name" placeholder="姓" value=""><input class="small" type="text" name="first_name" id="first_name" placeholder="名" value="">
+								<span id="full_name"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>お名前フリガナ<span>必須</span></th>
+							<td>
+								<input class="small" type="text" name="last_name_kana" id="last_name_kana" placeholder="セイ" value=""><input class="small" type="text" name="first_name_kana" id="first_name_kana" placeholder="メイ" value="">
+								<span id="full_name_kana"></span>
+							</td>
+						</tr>
+						<tr>
+							<th>電話番号<span>必須</span></th>
+							<td><input type="text" name="tel" id="tel" placeholder="" value=""></td>
+						</tr>
+						<tr>
+							<th>Email<span>必須</span></th>
+							<td><input type="text" name="email" id="email" placeholder="" value=""></td>
+						</tr>
+						<tr>
+							<th>お問い合わせ内容<span>必須</span></th>
+							<td><textarea name="body" id="body" rows="3" placeholder="お問い合わせ内容をご記入ください。"></textarea></td>
+						</tr>
+					</tbody>
+				</table>
+				<div id="btn_area">
+					<button type="submit" name="submitConfirm" value="confirm">確認画面へ</button>
+				</div>
+			</form>
+		</div>
+	</section>
+</article>
+<footer>
+	<img src="../img/interface/footer_logo.svg" alt="GROWING">
+	<small>&copy; 2021 Growing Soken co,.Ltd. All right reserved.</small>
+</footer>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#nav_btn").click(function () {
+		$("body>header>nav").slideToggle(150);
+	});
+	var mql = window.matchMedia('screen and (max-width:660px)');
+	function checkBreakPoint(mql) {
+		if (mql.matches) {
+			$('body>header>nav').css({'display':'none'});
+		} else {
+			$('body>header>nav').css({'display':'block'});
+		}
+	}
+});
+</script>
+</body>
+</html>
